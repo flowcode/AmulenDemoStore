@@ -3,10 +3,9 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
+class AppKernel extends Kernel {
+
+    public function registerBundles() {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
@@ -16,7 +15,31 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+            /* this demo app */
+            new Flowcode\DemoBundle\FlowcodeDemoBundle(),
+            
+            /* libs */
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Sonata\SeoBundle\SonataSeoBundle(),
+            new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
+            new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new FM\ElfinderBundle\FMElfinderBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            
+            /* amulen */
+            new Flowcode\ClassificationBundle\FlowcodeClassificationBundle(),
+            new Flowcode\PageBundle\FlowcodePageBundle(),
+            new Flowcode\MediaBundle\FlowcodeMediaBundle(),
+            new Flowcode\ShopBundle\FlowcodeShopBundle(),
+            new Flowcode\NewsBundle\FlowcodeNewsBundle(),
+            new Flowcode\UserBundle\FlowcodeUserBundle(),
+            new Flowcode\DashboardBundle\FlowcodeDashboardBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -29,8 +52,8 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
-    {
-        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+    public function registerContainerConfiguration(LoaderInterface $loader) {
+        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
     }
+
 }
