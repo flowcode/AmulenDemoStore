@@ -130,7 +130,7 @@ braincrafted_bootstrap:
 
 cmf_seo:
     original_route_pattern: redirect
-    title: "%%content_title%% - Symfony"
+    title: "%%content_title%% - Amulen"
     content_key: default
 
 ivory_ck_editor:
