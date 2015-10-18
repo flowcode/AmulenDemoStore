@@ -17,10 +17,9 @@ class AppKernel extends Kernel {
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             /* this demo app */
             new Flowcode\DemoBundle\FlowcodeDemoBundle(),
-            
+
             /* libs */
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
@@ -30,7 +29,7 @@ class AppKernel extends Kernel {
             new Liip\ImagineBundle\LiipImagineBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            
+
             /* amulen */
             new Flowcode\ClassificationBundle\FlowcodeClassificationBundle(),
             new Flowcode\PageBundle\FlowcodePageBundle(),
@@ -39,7 +38,7 @@ class AppKernel extends Kernel {
             new Flowcode\NewsBundle\FlowcodeNewsBundle(),
             new Flowcode\UserBundle\FlowcodeUserBundle(),
             new Flowcode\DashboardBundle\FlowcodeDashboardBundle(),
-            
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

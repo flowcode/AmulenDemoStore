@@ -44,7 +44,7 @@ twig:
     strict_variables: "%kernel.debug%"
     form:
         resources:
-            - BraincraftedBootstrapBundle:Form:bootstrap.html.twig
+            - 'bootstrap_3_horizontal_layout.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -52,9 +52,6 @@ assetic:
     use_controller: false
     bundles:        [FMElfinderBundle]
     filters:
-        lessphp:
-            file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
-            apply_to: "\.less$"
         cssrewrite: ~
 
 # Doctrine Configuration
@@ -110,23 +107,6 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-
-braincrafted_bootstrap:
-    icon_prefix: fa
-    fontawesome_dir: %kernel.root_dir%/../vendor/fortawesome/font-awesome
-    output_dir:
-    assets_dir: %kernel.root_dir%/../vendor/twbs/bootstrap
-    jquery_path: %kernel.root_dir%/../vendor/components/jquery/jquery.min.js
-    less_filter: lessphp
-    auto_configure:
-        assetic: true
-        twig: true
-        knp_menu: true
-        knp_paginator: true
-    customize:
-        variables_file: ~
-        bootstrap_output: %kernel.root_dir%/Resources/less/bootstrap.less
-        bootstrap_template: BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig
 
 cmf_seo:
     original_route_pattern: redirect
